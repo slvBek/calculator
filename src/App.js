@@ -17,6 +17,9 @@ const App = () => {
     setInput(input.slice(0, input.length-1));
   }
   return (
+    
+  
+    
     <div class="calculator">
       <input class="value" type="text" value={input} />
       <button onClick={handleReset} class="numclear">C</button>
@@ -35,9 +38,49 @@ const App = () => {
       <button name="8" onClick={(e) => setInput(input.concat(e.target.name))} class="num">8</button>
       <button name="9" onClick={(e) => setInput(input.concat(e.target.name))} class="num">9</button>
       <button name="0" onClick={(e) => setInput(input.concat(e.target.name))} class="num">0</button>
+      <button name="000" onClick={(e) => setInput(input.concat(e.target.name))} class="num">000</button>
       <button onClick={handleAnswer} class="num equal">=</button>
-      <button name="000000" onClick={(e) => setInput(input.concat(e.target.name))} class="num">000000</button>
     </div>
+    
   );
 };
+const colors = ["#3CC157", "#2AA7FF", "#1B1B1B", "#FCBC0F", "#F85F36"];
+
+const numBalls = 50;
+const balls = [];
+
+for (let i = 0; i < numBalls; i++) {
+  let ball = document.createElement("div");
+  ball.classList.add("ball");
+  ball.style.background = colors[Math.floor(Math.random() * colors.length)];
+  ball.style.left = `${Math.floor(Math.random() * 100)}vw`;
+  ball.style.top = `${Math.floor(Math.random() * 100)}vh`;
+  ball.style.transform = `scale(${Math.random()})`;
+  ball.style.width = `${Math.random()}em`;
+  ball.style.height = ball.style.width;
+  
+  balls.push(ball);
+  document.body.append(ball);
+}
+balls.forEach((el, i) => {
+  let to = {
+    x: Math.random() * (i % 2 === 0 ? -11 : 11),
+    y: Math.random() * 12
+  };
+
+  el.animate(
+    [
+      { transform: "translate(0, 0)" },
+      { transform: `translate(${to.x}rem, ${to.y}rem)` }
+    ],
+    {
+      duration: (Math.random() + 1) * 2000,
+      direction: "alternate",
+      fill: "both",
+      iterations: Infinity,
+      easing: "ease-in-out"
+    }
+  );
+});
+
 export default App;
