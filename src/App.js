@@ -3,27 +3,25 @@ import "./App.css";
 
 const App = () => {
   const [input, setInput] = useState("");
-  const handleAnswer = () => {
+  const handleResponse = () => {
     try {
       setInput(eval(input));
     }catch (error) {
       setInput("Error");
     }
   };
-  const handleReset = () => {
+  const handleC = () => {
     setInput("");
   };
-  const handleOldValue = () => {
+  const handleBack = () => {
     setInput(input.slice(0, input.length-1));
   }
   return (
-    
   
-    
     <div class="calculator">
       <input class="value" type="text" value={input} />
-      <button onClick={handleReset} class="numclear">C</button>
-      <button onClick={handleOldValue} class="numclear">Back</button>
+      <button onClick={handleC} class="numclear">C</button>
+      <button onClick={handleBack} class="numclear">Back</button>
       <button name="/" onClick={(e) => setInput(input.concat(e.target.name))} class="num">/</button>
       <button name="*" onClick={(e) => setInput(input.concat(e.target.name))} class="num">*</button>
       <button name="-" onClick={(e) => setInput(input.concat(e.target.name))} class="num">-</button>
@@ -39,7 +37,7 @@ const App = () => {
       <button name="9" onClick={(e) => setInput(input.concat(e.target.name))} class="num">9</button>
       <button name="0" onClick={(e) => setInput(input.concat(e.target.name))} class="num">0</button>
       <button name="000" onClick={(e) => setInput(input.concat(e.target.name))} class="num">000</button>
-      <button onClick={handleAnswer} class="num equal">=</button>
+      <button onClick={handleResponse} class="num equal">=</button>
     </div>
     
   );
@@ -82,5 +80,6 @@ balls.forEach((el, i) => {
     }
   );
 });
+
 
 export default App;
