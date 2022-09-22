@@ -52,19 +52,6 @@ body {
   background: orange;
  
 }
-.ball {
-  position: absolute;
-  border-radius: 100%;
-  opacity: 0.7;
-}
-
-html, body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: "Lato", sans-serif;
-}
 
 html {
   background: #fff;
@@ -141,20 +128,93 @@ svg {
   font-weight: bold;
 }
 
-@keyframes text {
-  0%{
-      color: #000;
-      margin-bottom: -40px;
-  }
 
-  30%{
-      letter-spacing: 25px;
-      margin-bottom: -40px;
-  }
+/* .fadeOut {
+  opacity: 1;
+  font-size: 20px;
+  animation: colorchange 5s infinite, translucid 5s infinite;
+  position: fixed;
+}
 
-  85%{
-      letter-spacing: 8px;
-      margin-bottom: -40px;
+@keyframes textgrowth {
+  from {
+    opacity: 1;
+    font-size: 20px;
+  }
+  to {
+    opacity: 0.1;
+    font-size: 30px;
   }
 }
 
+@keyframes translucid {
+  0% {
+   opacity: 0;
+  }
+  10% {
+    opacity: 0.2;
+  }
+  20% {
+    opacity: 0.4;
+  }
+  30% {
+    opacity: 0.6;
+  }
+  40% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0.8;
+  }
+  70% {
+    opacity: 0.6;
+  }
+  80% {
+    opacity: 0.4;
+  }
+  90% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes colorchange {
+  0% {
+    color: blue;
+  }
+  10% {
+    color: #8e44ad;
+  }
+  20% {
+    color: #1abc9c;
+  }
+  30% {
+    color: #d35400;
+  }
+  40% {
+    color: blue;
+  }
+  50% {
+    color: #34495e;
+  }
+  60% {
+    color: blue;
+  }
+  70% {
+    color: #2980b9;
+  }
+  80% {
+    color: #f1c40f;
+  }
+  90% {
+    color: #2980b9;
+  }
+  100% {
+    color: pink;
+  }
+} */
